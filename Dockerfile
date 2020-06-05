@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
         libpng-dev \
         libmemcached-dev \
         git \
+        libzip-dev \
     && apt-get autoclean && apt-get clean \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd \
@@ -24,6 +25,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install mysqli \
     && docker-php-ext-install opcache \
     && docker-php-ext-install bcmath \
+    && docker-php-ext-install zip \
     # php.ini 文件
     && cp "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 

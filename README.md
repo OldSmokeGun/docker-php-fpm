@@ -44,4 +44,5 @@
 - `xmlreader`
 - `xmlwriter`
 - `Zend OPcache`
+- `zip`
 - `zlib`
